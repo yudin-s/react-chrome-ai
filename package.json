@@ -1,6 +1,6 @@
 {
   "name": "@yudin-s/react-chrome-ai",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React hooks for Chrome Built-in AI, Gemini Nano, LanguageModel, and browser-side AI task APIs.",
   "type": "module",
   "license": "MIT",

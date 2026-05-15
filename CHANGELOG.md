@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2
+
+- Publish release artifacts to GitHub Packages in addition to npmjs.com.
+- Keep package contents and public API unchanged from `0.1.1`.
+
 ## 0.1.1
 
 - Validate GitHub Actions trusted publishing release flow.

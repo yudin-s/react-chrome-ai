@@ -75,7 +75,7 @@ Suggested flow:
 2. Publish the first package version manually if the package does not exist yet.
 3. Configure npm trusted publishing for the package and release workflow.
 4. Tag a release, for example `v0.1.1`.
-5. Let GitHub Actions publish with `npm publish --access public`.
+5. Let GitHub Actions publish to npmjs.com and GitHub Packages.
 
 Trusted publishing requires npm CLI `11.5.1` or later and Node `22.14.0` or later. The publish workflow uses Node `24`.
 
@@ -88,6 +88,8 @@ Configure npm trusted publishing with:
 - Environment: leave empty unless a GitHub deployment environment is added later
 
 When published through trusted publishing from this public GitHub repository, npm automatically generates provenance attestations. The workflow does not need `--provenance`.
+
+The same workflow also publishes the package to GitHub Packages using `GITHUB_TOKEN` and the `packages: write` permission. The GitHub Packages step sets `NPM_CONFIG_PROVENANCE=false` because GitHub Packages is authenticated with `GITHUB_TOKEN`, while npmjs.com provenance is handled by trusted publishing.
 
 ### Manual First Publish
 
