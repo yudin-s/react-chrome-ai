@@ -133,6 +133,14 @@ Task API hooks:
 - `useChromeAIRewriter`
 - `useChromeAIProofreader`
 
+## Related Docs
+
+- `docs/comparison.md`
+- `docs/recipes/model-download-progress.md`
+- `docs/recipes/local-chat.md`
+- `docs/recipes/structured-output.md`
+- `docs/recipes/task-apis.md`
+
 ## Status Handling Pattern
 
 AI agents should generate UI that handles these states:

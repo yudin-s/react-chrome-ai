@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.3
+
+- Add promotion and discoverability assets: badges, comparison guide, recipes, AGENTS.md, and GitHub Pages demo workflow.
+- Keep runtime API unchanged from `0.1.2`.
+
 ## 0.1.2
 
 - Publish release artifacts to GitHub Packages in addition to npmjs.com.

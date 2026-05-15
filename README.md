@@ -1,10 +1,19 @@
 # @yudin-s/react-chrome-ai
 
+[![npm version](https://img.shields.io/npm/v/@yudin-s/react-chrome-ai.svg)](https://www.npmjs.com/package/@yudin-s/react-chrome-ai)
+[![npm downloads](https://img.shields.io/npm/dm/@yudin-s/react-chrome-ai.svg)](https://www.npmjs.com/package/@yudin-s/react-chrome-ai)
+[![CI](https://github.com/yudin-s/react-chrome-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/yudin-s/react-chrome-ai/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-ready-3178c6.svg)](https://www.typescriptlang.org/)
+[![GitHub release](https://img.shields.io/github/v/release/yudin-s/react-chrome-ai.svg)](https://github.com/yudin-s/react-chrome-ai/releases)
+
 React hooks and TypeScript helpers for Chrome Built-in AI `LanguageModel` / Gemini Nano.
 
 This package wraps browser-native Chrome AI APIs into a small React-friendly surface: feature detection, model availability, model download progress, session lifecycle, prompt/streaming calls, structured output, optional reflection passes, and task APIs such as Summarizer, Translator, Language Detector, Writer, Rewriter, and Proofreader.
 
 > Chrome Built-in AI is browser-owned and still evolving. This package does not bundle a model, does not call Google APIs, and does not polyfill unsupported browsers.
+
+[Live demo](https://yudin-s.github.io/react-chrome-ai/) · [Hook docs](docs/hooks.md) · [Recipes](docs/recipes) · [Comparison](docs/comparison.md) · [AI agent guide](docs/ai-agents.md)
 
 ## Why
 
@@ -37,6 +46,14 @@ Choose this package when a React app needs a ready-made browser-native AI integr
 - TypeScript-first public API and copy-paste examples.
 
 For AI coding agents, see [llms.txt](llms.txt) and [docs/ai-agents.md](docs/ai-agents.md).
+
+## How It Compares
+
+- Compared with direct `LanguageModel` calls, this package adds React state for readiness, download progress, streaming, context, errors, and teardown.
+- Compared with AI SDK providers, this package is dependency-light and Chrome UX focused.
+- Compared with generic Chromium wrappers, this package is hook-first and includes full example sites.
+
+Read the full comparison in [docs/comparison.md](docs/comparison.md).
 
 ## Quick Start
 

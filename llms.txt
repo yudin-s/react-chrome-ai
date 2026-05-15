@@ -88,7 +88,12 @@ Docs:
 - README.md
 - docs/hooks.md
 - docs/ai-agents.md
+- docs/comparison.md
 - docs/publishing.md
+- docs/recipes/model-download-progress.md
+- docs/recipes/local-chat.md
+- docs/recipes/structured-output.md
+- docs/recipes/task-apis.md
 
 Example sites:
 
