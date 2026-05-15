@@ -1,0 +1,161 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f6f7fb;
+  color: #0f172a;
+}
+
+#root {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.page {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.hero p {
+  margin: 0.5rem 0 0;
+  color: #334155;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card,
+.api-card {
+  background: #ffffff;
+  border: 1px solid #d4d8e3;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.kv-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.kv-grid > div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.kv-grid p {
+  margin: 0;
+  color: #334155;
+}
+
+.progress-row {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+progress {
+  width: 100%;
+  height: 0.6rem;
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.inline-field,
+.input-block {
+  display: grid;
+  gap: 0.35rem;
+}
+
+input,
+textarea {
+  border: 1px solid #cfd8e3;
+  border-radius: 6px;
+  padding: 0.6rem 0.65rem;
+  font: inherit;
+  color: inherit;
+  background: #fff;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 1px solid #1e293b;
+  color: #f8fafc;
+  background: #1e293b;
+  border-radius: 6px;
+  padding: 0.58rem 0.95rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0f172a;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.kv span {
+  color: #475569;
+}
+
+.output {
+  display: block;
+  min-height: 130px;
+  white-space: pre-wrap;
+  background: #f8fafc;
+  border: 1px solid #d4d8e3;
+  border-radius: 6px;
+  padding: 0.8rem;
+}
+
+.error {
+  color: #b91c1c;
+  margin: 0.35rem 0 0;
+}

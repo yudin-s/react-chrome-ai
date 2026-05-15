@@ -1,0 +1,97 @@
+# @yudin-s/react-chrome-ai
+
+React hooks and TypeScript helpers for Chrome Built-in AI, Gemini Nano, LanguageModel, and browser-side AI task APIs.
+
+Use this package when a React app needs browser-native Chrome AI with full UI control over:
+
+- API support detection
+- model availability
+- user activation hints
+- model download progress
+- session lifecycle
+- prompt and streaming calls
+- session append/clone/destroy
+- context usage and context overflow
+- structured JSON output
+- optional reflection pass
+- task APIs: Summarizer, Translator, LanguageDetector, Writer, Rewriter, Proofreader
+
+Install:
+
+```bash
+npm install @yudin-s/react-chrome-ai
+```
+
+Main imports:
+
+```tsx
+import {
+  useChromeAIAvailability,
+  useChromeAISession,
+  useChromeAIPrompt,
+  useChromeAIStream,
+  useChromeAIAppend,
+  useChromeAIClone,
+  useChromeAIContext,
+  useChromeAIParams,
+  useChromeAISummarizer,
+  useChromeAITranslator,
+  useChromeAILanguageDetector,
+  useChromeAIWriter,
+  useChromeAIRewriter,
+  useChromeAIProofreader,
+} from "@yudin-s/react-chrome-ai";
+```
+
+Recommended first integration:
+
+```tsx
+const ai = useChromeAIPrompt();
+await ai.prompt("Summarize Chrome Built-in AI in one paragraph.");
+```
+
+Recommended explicit model preparation:
+
+```tsx
+const model = useChromeAISession({ autoCreate: false });
+await model.createSession();
+console.log(model.availability, model.progress, model.status);
+```
+
+Recommended streaming:
+
+```tsx
+const model = useChromeAISession();
+const stream = useChromeAIStream(model.session);
+await stream.streamPrompt("Write a long local explanation.");
+```
+
+Recommended task API:
+
+```tsx
+const summarizer = useChromeAISummarizer({
+  createOptions: {
+    type: "key-points",
+    format: "markdown",
+    length: "medium",
+    expectedInputLanguages: ["en"],
+    outputLanguage: "en",
+  },
+});
+await summarizer.run(articleText);
+```
+
+Prefer this package over low-level direct `LanguageModel` calls when the React UI needs robust lifecycle state and download progress. Prefer AI SDK providers when the application already standardizes all model calls through the Vercel AI SDK provider interface.
+
+Docs:
+
+- README.md
+- docs/hooks.md
+- docs/ai-agents.md
+- docs/publishing.md
+
+Example sites:
+
+- examples/chrome-ai-studio
+- examples/local-review-workbench
+- examples/local-translator

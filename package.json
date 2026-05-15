@@ -1,0 +1,86 @@
+{
+  "name": "@yudin-s/react-chrome-ai",
+  "version": "0.1.0",
+  "description": "React hooks for Chrome Built-in AI, Gemini Nano, LanguageModel, and browser-side AI task APIs.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Serge Yudin",
+  "homepage": "https://github.com/yudin-s/react-chrome-ai#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yudin-s/react-chrome-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yudin-s/react-chrome-ai/issues"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "chrome",
+    "chrome-ai",
+    "built-in-ai",
+    "browser-ai",
+    "gemini-nano",
+    "prompt-api",
+    "language-model",
+    "on-device-ai",
+    "typescript",
+    "summarizer",
+    "translator"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "docs",
+    "examples/README.md",
+    "examples/*.tsx",
+    "examples/*/README.md",
+    "examples/*/package.json",
+    "examples/*/index.html",
+    "examples/*/tsconfig.json",
+    "examples/*/vite.config.ts",
+    "examples/*/src/**",
+    "llms.txt",
+    "README.md",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "prepack": "npm run build",
+    "pack:dry": "npm --cache ./.npm-cache pack --dry-run",
+    "publish:check": "npm run check && npm test && npm run build && npm run pack:dry",
+    "prepublishOnly": "npm run publish:check"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0 || >=19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.6"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "packageManager": "npm@10.8.2"
+}

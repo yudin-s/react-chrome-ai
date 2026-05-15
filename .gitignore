@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.npm-cache/
+examples/*/node_modules/
+examples/*/dist/
+examples/*/package-lock.json
+.DS_Store
+*.tgz
