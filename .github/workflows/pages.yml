@@ -31,7 +31,7 @@ jobs:
           node-version: 24
       - run: npm ci
       - run: npm run build
-      - run: npm ci
+      - run: npm install --no-audit --no-fund
         working-directory: examples/chrome-ai-studio
       - run: npm run build
         working-directory: examples/chrome-ai-studio
