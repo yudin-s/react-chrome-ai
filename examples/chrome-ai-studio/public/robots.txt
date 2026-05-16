@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yudin-s.github.io/react-chrome-ai/sitemap.xml

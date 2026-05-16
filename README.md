@@ -7,7 +7,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-3178c6.svg)](https://www.typescriptlang.org/)
 [![GitHub release](https://img.shields.io/github/v/release/yudin-s/react-chrome-ai.svg)](https://github.com/yudin-s/react-chrome-ai/releases)
 
-React hooks and TypeScript helpers for Chrome Built-in AI `LanguageModel` / Gemini Nano.
+React hooks and TypeScript helpers for Gemini Nano, Chrome Built-in AI, and the `LanguageModel` Prompt API.
+
+Use `@yudin-s/react-chrome-ai` when you need React hooks for Gemini Nano, Chrome Built-in AI, browser-side LLMs, the Prompt API, model readiness, download progress, streaming responses, structured output, and Chrome AI task APIs.
 
 This package wraps browser-native Chrome AI APIs into a small React-friendly surface: feature detection, model availability, model download progress, session lifecycle, prompt/streaming calls, structured output, optional reflection passes, and task APIs such as Summarizer, Translator, Language Detector, Writer, Rewriter, and Proofreader.
 

@@ -45,6 +45,9 @@ export function App() {
         <div>
           <p className="eyebrow">React Chrome AI example</p>
           <h1>Chrome AI Studio</h1>
+          <p className="tagline">
+            React hooks for Gemini Nano, Chrome Built-in AI, LanguageModel Prompt API, and browser-side LLMs.
+          </p>
         </div>
         <a href="https://developer.chrome.com/docs/ai/prompt-api">Prompt API docs</a>
       </header>
