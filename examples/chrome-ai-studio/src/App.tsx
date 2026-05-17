@@ -13,6 +13,37 @@ const prompts = [
   "List three UX states a browser-native AI app must handle.",
 ];
 
+const quickStart = `import { useChromeAIPrompt } from "@yudin-s/react-chrome-ai";
+
+export function LocalAssistant() {
+  const ai = useChromeAIPrompt();
+
+  return (
+    <button onClick={() => ai.prompt("Summarize this locally.")}>
+      Ask Gemini Nano
+    </button>
+  );
+}`;
+
+const features = [
+  {
+    title: "Model readiness",
+    text: "Detect support, availability, user activation, and browser-managed model preparation.",
+  },
+  {
+    title: "Download progress",
+    text: "Render progress from Chrome AI create({ monitor }) as ordinary React state.",
+  },
+  {
+    title: "Prompt streaming",
+    text: "Use prompt() and promptStreaming() with lifecycle, errors, aborts, and teardown.",
+  },
+  {
+    title: "Task APIs",
+    text: "Wrap Summarizer, Translator, Language Detector, Writer, Rewriter, and Proofreader.",
+  },
+];
+
 export function App() {
   const [prompt, setPrompt] = useState(prompts[0]);
   const readiness = useChromeAIAvailability();
@@ -41,18 +72,76 @@ export function App() {
 
   return (
     <main className="shell">
-      <header className="topbar">
+      <nav className="site-nav" aria-label="Package navigation">
+        <a className="brand" href="https://github.com/yudin-s/react-chrome-ai">
+          @yudin-s/react-chrome-ai
+        </a>
+        <div className="package-links">
+          <a href="https://www.npmjs.com/package/@yudin-s/react-chrome-ai">npm</a>
+          <a href="https://github.com/yudin-s/react-chrome-ai">GitHub</a>
+          <a href="https://github.com/yudin-s/react-chrome-ai/blob/main/docs/hooks.md">Docs</a>
+          <a href="https://github.com/yudin-s/react-chrome-ai/tree/main/docs/recipes">Recipes</a>
+        </div>
+      </nav>
+
+      <header className="hero">
         <div>
-          <p className="eyebrow">React Chrome AI example</p>
-          <h1>Chrome AI Studio</h1>
+          <p className="eyebrow">React hooks library for Chrome-side LLMs</p>
+          <h1>@yudin-s/react-chrome-ai</h1>
           <p className="tagline">
             React hooks for Gemini Nano, Chrome Built-in AI, LanguageModel Prompt API, and browser-side LLMs.
           </p>
+          <div className="hero-actions">
+            <a className="primary-link" href="https://www.npmjs.com/package/@yudin-s/react-chrome-ai">
+              View on npm
+            </a>
+            <a href="https://github.com/yudin-s/react-chrome-ai">Read the source</a>
+            <a href="#playground">Try the live playground</a>
+          </div>
         </div>
-        <a href="https://developer.chrome.com/docs/ai/prompt-api">Prompt API docs</a>
+
+        <section className="install-card" aria-labelledby="install-title">
+          <h2 id="install-title">Install</h2>
+          <code className="install-command">npm install @yudin-s/react-chrome-ai</code>
+          <p>
+            No API key, backend, or bundled model. Chrome owns model availability
+            and Gemini Nano downloads.
+          </p>
+        </section>
       </header>
 
-      <section className="status-grid">
+      <section className="quickstart" aria-labelledby="quickstart-title">
+        <div>
+          <p className="eyebrow">Quick start</p>
+          <h2 id="quickstart-title">Use Chrome AI from React state</h2>
+          <p>
+            Hooks expose availability, download progress, sessions, prompts,
+            streaming, structured output, and task APIs without hiding the native
+            Chrome Built-in AI behavior.
+          </p>
+        </div>
+        <pre><code>{quickStart}</code></pre>
+      </section>
+
+      <section className="feature-grid" aria-label="Feature coverage">
+        {features.map((feature) => (
+          <article className="feature-tile" key={feature.title}>
+            <h2>{feature.title}</h2>
+            <p>{feature.text}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="section-heading" id="playground">
+        <p className="eyebrow">Live example</p>
+        <h2>Chrome AI playground</h2>
+        <p>
+          This playground is built with the package hooks and shows the UI states a
+          real app needs to control.
+        </p>
+      </section>
+
+      <section className="status-grid" aria-label="Chrome AI runtime status">
         <StatusTile label="API support" value={readiness.supported ? "Supported" : "Not exposed"} />
         <StatusTile label="Availability" value={readiness.availability ?? readiness.status} />
         <StatusTile label="Session" value={model.status} />
