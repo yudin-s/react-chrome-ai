@@ -346,6 +346,11 @@ output {
 }
 
 @media (max-width: 980px) {
+  .shell {
+    display: flex;
+    flex-direction: column;
+  }
+
   .site-nav,
   .hero,
   .quickstart {
@@ -366,5 +371,19 @@ output {
   .status-grid,
   .workspace {
     grid-template-columns: 1fr;
+  }
+
+  .playground-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quickstart,
+  .feature-grid {
+    order: 3;
+  }
+
+  .playground-block {
+    order: 2;
   }
 }

@@ -132,7 +132,53 @@ export function App() {
         ))}
       </section>
 
-      <section className="section-heading" id="playground">
+      <Playground
+        contextPercent={contextPercent}
+        model={model}
+        params={params}
+        prompt={prompt}
+        readiness={readiness}
+        setPrompt={setPrompt}
+        stream={stream}
+        context={context}
+      />
+    </main>
+  );
+}
+
+function StatusTile({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="status-tile">
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+type PlaygroundProps = {
+  context: ReturnType<typeof useChromeAIContext>;
+  contextPercent: number;
+  model: ReturnType<typeof useChromeAISession>;
+  params: ReturnType<typeof useChromeAIParams>;
+  prompt: string;
+  readiness: ReturnType<typeof useChromeAIAvailability>;
+  setPrompt: (prompt: string) => void;
+  stream: ReturnType<typeof useChromeAIStream>;
+};
+
+function Playground({
+  context,
+  contextPercent,
+  model,
+  params,
+  prompt,
+  readiness,
+  setPrompt,
+  stream,
+}: PlaygroundProps) {
+  return (
+    <section className="playground-block" id="playground">
+      <section className="section-heading">
         <p className="eyebrow">Live example</p>
         <h2>Chrome AI playground</h2>
         <p>
@@ -216,15 +262,6 @@ export function App() {
           <output>{stream.text || "The local model response will appear here."}</output>
         </section>
       </section>
-    </main>
-  );
-}
-
-function StatusTile({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="status-tile">
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
+    </section>
   );
 }
