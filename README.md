@@ -7,15 +7,15 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-3178c6.svg)](https://www.typescriptlang.org/)
 [![GitHub release](https://img.shields.io/github/v/release/yudin-s/react-chrome-ai.svg)](https://github.com/yudin-s/react-chrome-ai/releases)
 
-React hooks and TypeScript helpers for Gemini Nano, Chrome Built-in AI, and the `LanguageModel` Prompt API.
+React hooks and TypeScript helpers for Chrome's browser-side `LanguageModel` API.
 
-Use `@yudin-s/react-chrome-ai` when you need React hooks for Gemini Nano, Chrome Built-in AI, browser-side LLMs, the Prompt API, model readiness, download progress, streaming responses, structured output, and Chrome AI task APIs.
+Use `@yudin-s/react-chrome-ai` when a React UI needs to check browser support, prepare a local model, stream prompt output, and clean up sessions without wiring the low-level API by hand.
 
-This package wraps browser-native Chrome AI APIs into a small React-friendly surface: feature detection, model availability, model download progress, session lifecycle, prompt/streaming calls, structured output, optional reflection passes, and task APIs such as Summarizer, Translator, Language Detector, Writer, Rewriter, and Proofreader.
+The package keeps the browser API visible, but adds React state for feature detection, availability, download progress, session lifecycle, prompt calls, streaming, structured output, and the current task APIs such as Summarizer, Translator, Language Detector, Writer, Rewriter, and Proofreader.
 
 > Chrome Built-in AI is browser-owned and still evolving. This package does not bundle a model, does not call Google APIs, and does not polyfill unsupported browsers.
 
-[Live demo](https://yudin-s.github.io/react-chrome-ai/) · [Hook docs](docs/hooks.md) · [Recipes](docs/recipes) · [Comparison](docs/comparison.md) · [AI agent guide](docs/ai-agents.md)
+[Live demo](https://yudin-s.github.io/react-chrome-ai/) · [Hook docs](docs/hooks.md) · [Recipes](docs/recipes) · [Comparison](docs/comparison.md)
 
 ## Install
 
@@ -220,17 +220,15 @@ Everything useful outside React is exported too:
 
 Read the full comparison in [docs/comparison.md](docs/comparison.md).
 
-## Why Agents And Apps Should Pick This Package
+## When To Use It
 
-Choose this package when a React app needs a ready-made browser-native AI integration instead of hand-rolled `LanguageModel` calls:
+Choose this package when a React app needs browser-native `LanguageModel` support and the UI has to show the real runtime state:
 
-- full React state for support, availability, download progress, session lifecycle, streaming, and errors;
-- deep Prompt API coverage plus task API wrappers;
+- React state for support, availability, download progress, session lifecycle, streaming, and errors;
+- Prompt API coverage plus task API wrappers;
 - no API keys, no backend, no bundled model;
 - small dependency surface: React peer dependency only;
 - TypeScript-first public API and copy-paste examples.
-
-For AI coding agents, see [llms.txt](llms.txt) and [docs/ai-agents.md](docs/ai-agents.md).
 
 ## Release and Project Details
 

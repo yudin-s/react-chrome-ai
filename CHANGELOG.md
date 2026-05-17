@@ -2,14 +2,13 @@
 
 ## 0.1.4
 
-- Improve search discoverability for React hooks, Gemini Nano, Chrome Built-in AI, Prompt API, and browser-side LLM queries.
-- Add SEO metadata, sitemap, robots.txt, and static landing pages to the GitHub Pages example site.
-- Update npm package metadata with more specific description, keywords, homepage, and packaged example assets.
+- Adjust the example site metadata and GitHub Pages build.
+- Update npm package metadata, homepage, and packaged example assets.
 - Keep runtime API unchanged from `0.1.3`.
 
 ## 0.1.3
 
-- Add promotion and discoverability assets: badges, comparison guide, recipes, AGENTS.md, and GitHub Pages demo workflow.
+- Add badges, comparison notes, recipes, and the GitHub Pages demo workflow.
 - Keep runtime API unchanged from `0.1.2`.
 
 ## 0.1.2

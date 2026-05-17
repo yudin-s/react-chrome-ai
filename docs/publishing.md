@@ -6,12 +6,12 @@ This document captures the publication choices for `@yudin-s/react-chrome-ai`.
 
 The package should be positioned as:
 
-- React-first hooks for Chrome Built-in AI.
-- Browser-native, privacy-oriented, no API keys.
-- Full lifecycle control: readiness, download progress, session ownership, streaming, and teardown.
+- React hooks for Chrome's browser-side `LanguageModel` API.
+- Browser-native runtime, no API keys, and no bundled model.
+- Lifecycle control: readiness, download progress, session ownership, streaming, and teardown.
 - Complementary to AI SDK provider packages rather than a replacement for them.
 
-Good npm search terms are included in `package.json`: `react`, `hooks`, `chrome-ai`, `built-in-ai`, `browser-ai`, `gemini-nano`, `prompt-api`, `language-model`, `on-device-ai`, `summarizer`, and `translator`.
+Good npm search terms are included in `package.json`: `react`, `hooks`, `chrome-ai`, `built-in-ai`, `gemini-nano`, `prompt-api`, `language-model`, `on-device-ai`, `summarizer`, and `translator`.
 
 ## Best Practices Applied
 
@@ -21,7 +21,7 @@ Good npm search terms are included in `package.json`: `react`, `hooks`, `chrome-
 - `sideEffects: false` enables tree-shaking.
 - React is a peer dependency.
 - Package contents are controlled with `files`.
-- `llms.txt`, agent guidance, and copy-paste examples are included for AI-agent discoverability.
+- Examples and documentation are included with the package.
 - `publishConfig.access` is `public` for the scoped package.
 - `publishConfig.provenance` is enabled.
 - CI runs typecheck, tests, build, and dry-pack.
