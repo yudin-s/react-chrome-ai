@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.5
+
+- Publish the latest library-style example site and package discoverability updates to npm.
+- Keep runtime API unchanged from `0.1.4`.
+
 ## 0.1.4
 
 - Adjust the example site metadata and GitHub Pages build.

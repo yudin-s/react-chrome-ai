@@ -1,6 +1,6 @@
 {
   "name": "@yudin-s/react-chrome-ai",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React hooks for Chrome's browser-side LanguageModel API.",
   "type": "module",
   "license": "MIT",
